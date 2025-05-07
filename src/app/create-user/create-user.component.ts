@@ -15,14 +15,14 @@ export class CreateUserComponent {
 	constructor(private authService: AuthService) {}
 	onSubmit() {
 		const res = this.authService.createUser(
-			this.email,
 			this.name,
+			this.email,
 			this.password,
 			this.role,
 		);
 		if (res) {
-			this.email = "";
 			this.name = "";
+			this.email = "";
 			this.password = "";
 			this.role = "member";
 			this.message = "User created successfully";

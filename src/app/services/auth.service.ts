@@ -10,10 +10,10 @@ export class AuthService {
 	private token = "token";
 	getAllUsers(): User[] {
 		const userListData = localStorage.getItem(this.userKey);
-    console.log(userListData)
+		console.log(userListData);
 		let userList: User[];
 		if (userListData) {
-			userList = JSON.parse(userListData) as User[];
+			userList = JSON.parse(userListData)["userList"] as User[];
 		} else {
 			userList = [
 				{
@@ -28,6 +28,7 @@ export class AuthService {
 	}
 	login(email: string, pass: string): boolean {
 		const userList = this.getAllUsers();
+		console.log("here");
 		console.log(userList);
 		const user: User | undefined = userList.filter(
 			(user) => user.email === email && user.pass === pass,
