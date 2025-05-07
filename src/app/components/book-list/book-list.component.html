@@ -1,0 +1,37 @@
+<div>
+  <h2>Library Books</h2>
+
+  <button *ngIf="isLibrarian" routerLink="/book-form">Add New Book</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>ISBN</th>
+        <th>Availability</th>
+        <th *ngIf="isLibrarian || isMember">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books">
+        <td>{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.isbn }}</td>
+        <td>{{ book.available ? "Available" : "Checked Out" }}</td>
+        <td>
+          <ng-container *ngIf="isLibrarian">
+            <button (click)="editBook(book.isbn)">Edit</button>
+            <button (click)="deleteBook(book.isbn)">Delete</button>
+          </ng-container>
+          <ng-container *ngIf="isMember">
+            <button [disabled]="!book.available" (click)="checkoutBook(book)">
+              Check Out
+            </button>
+            <button (click)="returnBook(book)">Return</button>
+          </ng-container>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,25 @@
+
+<form (ngSubmit)="onSubmit()">
+  <label for="email">Email</label>
+
+  <input
+    type="email"
+    id="email"
+    name="email"
+    [(ngModel)]="email"
+    placeholder="Email"
+  />
+
+  <label for="pass">Password</label>
+
+  <input
+    type="password"
+    id="pass"
+    name="pass"
+    [(ngModel)]="pass"
+    placeholder="Password"
+  />
+  <div class="message">{{ message }}</div>
+
+  <button type="submit">Submit</button>
+</form>

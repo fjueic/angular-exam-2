@@ -1,0 +1,15 @@
+<div>
+  <h3>Library Management System</h3>
+  <nav>
+    <ul>
+      <li><a routerLink="/book-list">Book List</a></li>
+      <li *ngIf="isLoggedIn()"><a routerLink="/create-user">Create User</a></li>
+      <li *ngIf="isLoggedIn()">
+        <a (click)="logout()">Logout</a>
+      </li>
+      <li *ngIf="!isLoggedIn()">
+        <a routerLink="/login">Login</a>
+      </li>
+    </ul>
+  </nav>
+</div>

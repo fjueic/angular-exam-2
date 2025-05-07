@@ -1,0 +1,18 @@
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+label {
+  margin-top: 1rem;
+}
+button {
+  margin-top: 1.5rem;
+}
+message {
+  color: red;
+  font-size: 0.8rem;
+}

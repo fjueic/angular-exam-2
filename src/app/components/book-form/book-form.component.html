@@ -1,0 +1,41 @@
+<style></style>
+
+<form (ngSubmit)="onSubmit()">
+  <label for="isbn">ISBN</label>
+
+  <input
+    type="number"
+    id="isbn"
+    name="isbn"
+    [(ngModel)]="isbn"
+    placeholder="Enter ISBN Number"
+  />
+  <label for="title">Title</label>
+
+  <input
+    type="text"
+    id="title"
+    name="title"
+    [(ngModel)]="title"
+    placeholder="Book Title"
+  />
+
+  <label for="author">Author</label>
+  <input
+    type="text"
+    id="author"
+    name="author"
+    [(ngModel)]="author"
+    placeholder="Author Name"
+  />
+  <label for="available">Availability</label>
+  <input
+    type="checkbox"
+    id="available"
+    name="available"
+    [(ngModel)]="available"
+    placeholder="Available Copies"
+  />
+  <div class="message">{{ message }}</div>
+  <button type="submit">Submit</button>
+</form>
